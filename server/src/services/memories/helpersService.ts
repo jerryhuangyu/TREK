@@ -32,6 +32,25 @@ export type Selection = {
 };
 
 
+//for loading routes to settings page, and validating which services user has connected
+type PhotoProviderConfig = {
+    settings_get: string;
+    settings_put: string;
+    status_get: string;
+    test_post: string;
+};
+
+
+export function getPhotoProviderConfig(providerId: string): PhotoProviderConfig {
+    const prefix = `/integrations/memories/${providerId}`;
+    return {
+        settings_get: `${prefix}/settings`,
+        settings_put: `${prefix}/settings`,
+        status_get: `${prefix}/status`,
+        test_post: `${prefix}/test`,
+    };
+}
+
 //-----------------------------------------------
 //access check helper
 

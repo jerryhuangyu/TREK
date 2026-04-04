@@ -232,7 +232,6 @@ function createTables(db: Database.Database): void {
       description TEXT,
       icon TEXT DEFAULT 'Image',
       enabled INTEGER DEFAULT 0,
-      config TEXT DEFAULT '{}',
       sort_order INTEGER DEFAULT 0
     );
 
